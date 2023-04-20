@@ -21,9 +21,10 @@ public class Gun : Equipment
     public GameObject bullet;
     public GameObject shootEffect;
     public GameObject casingEffect;
-    [Header("Exit Points")]
+    [Header("Pointers")]
     public GameObject bulletExit;
     public GameObject casingExit;
+    public AmmoHandler ammoHandler;
 
     private ObjectPool bulletPool;
     private ObjectPool shootEffectPool;
@@ -67,9 +68,12 @@ public class Gun : Equipment
         } else {
             if(grabController.TriggerJustPressed()) Shoot();
         }
+
+        if(grabController.PrimaryJustPressed()) ammoHandler?.EjectAmmo();
     }
 
     private void Shoot() {
+        if(!HasAmmo()) return;
         if(Time.time - lastShotTime < shotCooldown) return;
         lastShotTime = Time.time;
 
@@ -86,6 +90,7 @@ public class Gun : Equipment
 
         if(rumble > 0 && rumbleDuration > 0) grabController.Rumble(rumble, rumbleDuration);
 
+        ammoHandler?.ConsumeAmmo();
         ShootEffect();
         EjectCasing();
     }
@@ -103,5 +108,10 @@ public class Gun : Equipment
         casing.transform.position = casingExit.transform.position;
         casing.transform.rotation = casingExit.transform.rotation;
         casing.GetComponent<Rigidbody>().velocity = casingExit.transform.right*Random.Range(1.0f,2.0f);
+    }
+
+    private bool HasAmmo() {
+        if(ammoHandler == null) return true;
+        return ammoHandler.GetAmmoCount() > 0;
     }
 }

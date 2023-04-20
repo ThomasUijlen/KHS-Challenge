@@ -12,7 +12,7 @@ public class PoolObject : MonoBehaviour
         if(objectPool != null && !Object.ReferenceEquals(objectPool, null)) {
             objectPool.ReturnObject(gameObject);
         } else{
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 }

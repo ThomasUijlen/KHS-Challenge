@@ -20,8 +20,8 @@ public class AudioEffect : MonoBehaviour
         if(playOnEnable) Play();
     }
 
-    public void Play() {
-        source.pitch = defaultPitch + Random.Range(-randomPitch, randomPitch);
+    public void Play(float pitchModifier = 0.0f) {
+        source.pitch = defaultPitch + Random.Range(-randomPitch, randomPitch) + pitchModifier;
         source.Play();
     }
 }
