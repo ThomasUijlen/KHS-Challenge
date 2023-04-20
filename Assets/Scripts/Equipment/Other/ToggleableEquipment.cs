@@ -10,6 +10,7 @@ public class ToggleableEquipment : Equipment
         PRIMARY,
         SECONDARY,
     }
+    [Header("Toggle")]
 
     public bool toggled = false;
     public BUTTON button;
@@ -46,9 +47,9 @@ public class ToggleableEquipment : Equipment
 
     private void UpdateAnimator() {
         if(toggled) {
-            animator.SetTrigger("On");
+            animator.Play("On");
         } else {
-            animator.SetTrigger("Off");
+            animator.Play("Off");
         }
     }
 }

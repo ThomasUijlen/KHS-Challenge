@@ -8,19 +8,21 @@ public class Projectile : TimedObject
     public float speed = 10.0f;
     public float damage = 10.0f;
 
-    private Rigidbody rigidbody;
+    private Rigidbody body;
 
     void Start() {
-        rigidbody = GetComponent<Rigidbody>();
+        body = GetComponent<Rigidbody>();
     }
 
     void FixedUpdate()
     {
-        rigidbody.velocity = transform.forward*speed;
+        body.velocity = transform.forward*speed;
     }
 
     void OnCollisionEnter(Collision collisionInfo)
     {
+        HitTarget target = collisionInfo.gameObject.GetComponent<HitTarget>();
+        if(target) target.Damage(damage);
         ReturnToPool();
     }
 }

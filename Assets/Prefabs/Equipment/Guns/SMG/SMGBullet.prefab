@@ -78,7 +78,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPool: {fileID: 0}
   lifespan: 10
-  speed: 20
+  speed: 40
   damage: 10
 --- !u!1 &6399037030827979745
 GameObject:

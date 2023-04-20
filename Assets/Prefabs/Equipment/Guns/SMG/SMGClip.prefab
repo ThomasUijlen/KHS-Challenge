@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 1344679400560522963}
   - component: {fileID: 8190108783919686116}
   - component: {fileID: 946077562003577775}
+  - component: {fileID: 757420336117906484}
   m_Layer: 0
   m_Name: SMGClip
   m_TagString: Untagged
@@ -279,3 +280,17 @@ MonoBehaviour:
   ammoName: SMG
   maxAmmo: 30
   currentAmmo: 0
+--- !u!114 &757420336117906484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7484088227577278433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e04dd48dcfba43341ae7d9f5b66b1fca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseMesh: {fileID: 4045907190079660378}
+  hoverMaterial: {fileID: 2100000, guid: 33d1b831ca2d0a147aa881247469a617, type: 2}
