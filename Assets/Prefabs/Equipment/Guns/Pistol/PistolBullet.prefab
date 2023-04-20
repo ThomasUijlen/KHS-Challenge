@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2249437711448229024}
   - component: {fileID: 432755450574966167}
   - component: {fileID: 5419018043176102801}
-  - component: {fileID: 5876778939528156895}
-  m_Layer: 11
-  m_Name: SMGCasing
+  - component: {fileID: 4588616184430647424}
+  m_Layer: 9
+  m_Name: PistolBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.01, y: 0.01, z: 0.03}
+  m_Size: {x: 0.05, y: 0.05, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5419018043176102801
 Rigidbody:
@@ -56,15 +56,15 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3300215725974545138}
   serializedVersion: 2
-  m_Mass: 0.01
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 2
---- !u!114 &5876778939528156895
+--- !u!114 &4588616184430647424
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,11 +73,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3300215725974545138}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5973eb532d5893548871bff180b3c2d2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8bd52007879fbb7498cf87b0226c136a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   objectPool: {fileID: 0}
   lifespan: 10
+  speed: 40
+  damage: 10
 --- !u!1 &6399037030827979745
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,7 +107,7 @@ Transform:
   m_GameObject: {fileID: 6399037030827979745}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2249437711448229024}
@@ -118,7 +120,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6399037030827979745}
-  m_Mesh: {fileID: 4617522257319032757, guid: 661dcb98b17d6ae46b8eefbb295920ec, type: 3}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &5525308565378276078
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -139,8 +141,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e45d997eab78f9c408b8dd0283a318c3, type: 2}
-  - {fileID: 2100000, guid: bf4ca3197ff1a0d4cac9beb60b03ef92, type: 2}
+  - {fileID: 2100000, guid: 84dcbdfd454740d4ba6b4e1d1b3a8438, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

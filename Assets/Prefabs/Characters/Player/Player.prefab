@@ -251,7 +251,7 @@ MonoBehaviour:
   m_HideControllerOnSelect: 0
   m_AllowHoveredActivate: 0
   m_PlayAudioClipOnSelectEntered: 1
-  m_AudioClipForOnSelectEntered: {fileID: 8300000, guid: 03daca02b5ed814499dd4ae35955fe15, type: 3}
+  m_AudioClipForOnSelectEntered: {fileID: 8300000, guid: cc0015fcb227e7f4986d3bcc26c4b356, type: 3}
   m_PlayAudioClipOnSelectExited: 0
   m_AudioClipForOnSelectExited: {fileID: 0}
   m_PlayAudioClipOnSelectCanceled: 0
@@ -1044,7 +1044,7 @@ MonoBehaviour:
   m_HideControllerOnSelect: 0
   m_AllowHoveredActivate: 0
   m_PlayAudioClipOnSelectEntered: 1
-  m_AudioClipForOnSelectEntered: {fileID: 8300000, guid: 03daca02b5ed814499dd4ae35955fe15, type: 3}
+  m_AudioClipForOnSelectEntered: {fileID: 8300000, guid: cc0015fcb227e7f4986d3bcc26c4b356, type: 3}
   m_PlayAudioClipOnSelectExited: 0
   m_AudioClipForOnSelectExited: {fileID: 0}
   m_PlayAudioClipOnSelectCanceled: 0

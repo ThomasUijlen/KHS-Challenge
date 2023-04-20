@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5419018043176102801}
   - component: {fileID: 5876778939528156895}
   m_Layer: 11
-  m_Name: SMGCasing
+  m_Name: PistolCasing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
