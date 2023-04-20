@@ -558,6 +558,18 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 8812518173272573481, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  rumble:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Rumble
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 8e30fccb-6efb-45be-9d4b-208255e3c9c3
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -8785819595477538065, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &5399060142462805278
 GameObject:
   m_ObjectHideFlags: 0
@@ -1339,6 +1351,18 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 8061234055789071882, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  rumble:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Rumble
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 2669c6b3-3dea-4392-9ec8-41502e96cf49
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -8222252007134549311, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &5399060144092233121
 GameObject:
   m_ObjectHideFlags: 0

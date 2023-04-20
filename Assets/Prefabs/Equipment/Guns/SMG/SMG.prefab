@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &900848202066323172
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7895806327977033540}
+  m_Layer: 0
+  m_Name: BulletExit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7895806327977033540
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900848202066323172}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.034, z: 0.203}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3328516055091902667}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1043169194541104390
 GameObject:
   m_ObjectHideFlags: 0
@@ -34,6 +65,37 @@ Transform:
   m_Father: {fileID: 3328516055091902667}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1893520390187778681
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5075425232449673412}
+  m_Layer: 0
+  m_Name: CasingExit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5075425232449673412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893520390187778681}
+  m_LocalRotation: {x: -0, y: -0, z: 0.38268468, w: 0.9238791}
+  m_LocalPosition: {x: 0.0149, y: 0.0378, z: -0.0078}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3328516055091902667}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
 --- !u!1 &2390461527704060275
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,8 +363,8 @@ GameObject:
   - component: {fileID: 327075976919855257}
   - component: {fileID: 1344679400560522963}
   - component: {fileID: 8190108783919686116}
-  - component: {fileID: 3414818133914961002}
-  m_Layer: 0
+  - component: {fileID: 6756892475814342903}
+  m_Layer: 10
   m_Name: SMG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -322,6 +384,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 374296262044870588}
+  - {fileID: 7895806327977033540}
+  - {fileID: 5075425232449673412}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -469,7 +533,7 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
---- !u!114 &3414818133914961002
+--- !u!114 &6756892475814342903
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -478,44 +542,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 7484088227577278433}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e04dd48dcfba43341ae7d9f5b66b1fca, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b9b4fe6ab8d452429c466f2ad08f7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   baseMesh: {fileID: 2390461527704060275}
   hoverMaterial: {fileID: 2100000, guid: 33d1b831ca2d0a147aa881247469a617, type: 2}
-  trigger:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Trigger
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: d1ca427e-5b8e-4da6-94ab-1c8bb44b7006
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: -6352559036096749245, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  primary:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Primary
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 0786b3f7-f27a-4286-af4a-ce74d77d131e
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  secondary:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Secondary
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: c3b991f8-8c14-42ea-8017-89805c65fd80
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
+  bps: 10
+  bulletSpread: 0.1
+  bulletCount: 1
+  mode: 2
+  bullet: {fileID: 3300215725974545138, guid: 2cda53c965d37c448bc39f2e0322d2e6, type: 3}
+  shootEffect: {fileID: 3300215725974545138, guid: 7ffc7083368efc348b5bc029ac3beda0, type: 3}
+  casingEffect: {fileID: 3300215725974545138, guid: fec2da663719ad340be1e41dd2fca290, type: 3}
+  bulletExit: {fileID: 900848202066323172}
+  casingExit: {fileID: 1893520390187778681}

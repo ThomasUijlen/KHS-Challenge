@@ -15,10 +15,10 @@ public class Equipment : MonoBehaviour
     private MeshFilter meshFilter;
     private MeshRenderer meshRenderer;
 
-    private XRInput grabController;
+    protected XRInput grabController;
     private bool hovered = false;
 
-    void Start()
+    public void Start()
     {
         //Connect relevant Events
         interactable = GetComponent<XRGrabInteractable>();
@@ -51,12 +51,8 @@ public class Equipment : MonoBehaviour
         }
     }
 
-    public void Update() {
-        if(grabController == null) return;
-        meshRenderer.enabled = false;
-        if(grabController.TriggerPressed()) meshRenderer.enabled = true;
-        if(grabController.PrimaryPressed()) meshRenderer.enabled = true;
-        if(grabController.SecondaryPressed()) meshRenderer.enabled = true;
+    public bool IsGrabbed() {
+        return grabController != null;
     }
 
     public virtual void Hovered(HoverEnterEventArgs args) {
@@ -79,7 +75,7 @@ public class Equipment : MonoBehaviour
         UpdateHoverMesh();
     }
 
-    public void UpdateHoverMesh() {
+    private void UpdateHoverMesh() {
         if(baseMesh == null) return;
         meshRenderer.enabled = hovered && grabController == null;
     }

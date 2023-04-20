@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.XR;
 
 public class XRInput : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class XRInput : MonoBehaviour
     private InputActionProperty primary;
     [SerializeField]
     private InputActionProperty secondary;
+    [SerializeField]
+    private InputActionProperty rumble;
 
     public bool TriggerPressed() {
         return IsPressed(trigger.action);
@@ -25,7 +28,7 @@ public class XRInput : MonoBehaviour
     }
 
     public bool PrimaryPressed() {
-        return primary.action.IsPressed();
+        return IsPressed(primary.action);
     }
 
     public bool PrimaryJustPressed() {
@@ -37,7 +40,7 @@ public class XRInput : MonoBehaviour
     }
 
     public bool SecondaryPressed() {
-        return secondary.action.IsPressed();
+        return IsPressed(secondary.action);
     }
 
     public bool SecondaryJustPressed() {
@@ -46,6 +49,14 @@ public class XRInput : MonoBehaviour
 
     public bool SecondaryJustReleased() {
         return JustReleased(secondary.action);
+    }
+
+    public void Rumble(float amplitude, float duration)
+    {
+        if (rumble.action?.activeControl?.device is XRControllerWithRumble rumbleController)
+        {
+            rumbleController.SendImpulse(amplitude, duration);
+        }
     }
 
     private bool IsPressed(InputAction action) {
@@ -57,6 +68,6 @@ public class XRInput : MonoBehaviour
     }
 
     private bool JustReleased(InputAction action) {
-        return action.triggered && action.ReadValue<float>() == default;
+        return action.triggered && action.ReadValue<float>() == 0;
     }
 }
