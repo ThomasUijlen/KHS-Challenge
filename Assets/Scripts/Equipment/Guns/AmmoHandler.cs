@@ -23,22 +23,22 @@ public class AmmoHandler : MonoBehaviour
     void OnTriggerEnter(Collider collisionInfo)
     {
         if(currentAmmo > 0) return;
-        Ammo ammo = collisionInfo.gameObject.GetComponent<Ammo>();
-        if(ammo == null) return;
-        if(ammo.ammoName != ammoName) return;
+        Ammo ammoClip = collisionInfo.gameObject.GetComponent<Ammo>();
+        if(ammoClip == null) return;
+        if(ammoClip.ammoName != ammoName) return;
         if(Time.time - ejectTime < 1.0f) return;
 
-        currentAmmo = ammo.currentAmmo;
+        currentAmmo = ammoClip.currentAmmo;
         audioEffect.Play();
         UpdateMesh();
-        Destroy(ammo.gameObject);
+        Destroy(ammoClip.gameObject);
     }
 
     public void EjectAmmo() {
         if(currentAmmo < 0) return;
 
-        Ammo ammo = Instantiate(ammoPrefab, transform.position, transform.rotation);
-        ammo.currentAmmo = currentAmmo;
+        Ammo ammoClip = Instantiate(ammoPrefab, transform.position, transform.rotation);
+        ammoClip.currentAmmo = currentAmmo;
         ejectTime = Time.time;
         currentAmmo = -1;
         audioEffect.Play(-0.2f);

@@ -420,6 +420,7 @@ GameObject:
   - component: {fileID: 2103974413483880909}
   - component: {fileID: 8943545953943720926}
   - component: {fileID: 5395875040798300432}
+  - component: {fileID: 160014787792639607}
   m_Layer: 0
   m_Name: ModeSwitch
   m_TagString: Untagged
@@ -435,7 +436,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6721911198802527541}
   m_LocalRotation: {x: 0.000000081460335, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0006999688, y: -0.581186, z: 1.0217856}
+  m_LocalPosition: {x: 0.0006999688, y: -0.73, z: -1}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -492,6 +493,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &160014787792639607
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6721911198802527541}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f3a8315ef3c02a4498ef56f15d9e2016, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7484088227577278433
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,4 +720,5 @@ MonoBehaviour:
   casingEffect: {fileID: 3300215725974545138, guid: fec2da663719ad340be1e41dd2fca290, type: 3}
   bulletExit: {fileID: 900848202066323172}
   casingExit: {fileID: 1893520390187778681}
+  gunAnimator: {fileID: 160014787792639607}
   ammoHandler: {fileID: 3557178145032823147}

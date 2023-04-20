@@ -24,6 +24,7 @@ public class Gun : Equipment
     [Header("Pointers")]
     public GameObject bulletExit;
     public GameObject casingExit;
+    public Animator gunAnimator;
     public AmmoHandler ammoHandler;
 
     private ObjectPool bulletPool;
@@ -62,13 +63,26 @@ public class Gun : Equipment
     private void HandleInputs() {
         if(!IsGrabbed()) return;
 
-        if(mode == GUN_MODE.BOTH && grabController.SecondaryJustPressed()) automatic = !automatic;
+        //Automatic & Single mode switch
+        if(mode == GUN_MODE.BOTH && grabController.SecondaryJustPressed()) {
+            automatic = !automatic;
+
+            //Play correct animation
+            if(automatic) {
+                gunAnimator?.SetTrigger("Automatic");
+            } else {
+                gunAnimator?.SetTrigger("Single");
+            }
+        }
+
+        //Check for trigger
         if(automatic) {
             if(grabController.TriggerPressed()) Shoot();
         } else {
             if(grabController.TriggerJustPressed()) Shoot();
         }
 
+        //Check for ammo eject
         if(grabController.PrimaryJustPressed()) ammoHandler?.EjectAmmo();
     }
 

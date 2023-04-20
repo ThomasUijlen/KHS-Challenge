@@ -277,5 +277,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoName: SMG
-  maxAmmo: 20
+  maxAmmo: 30
   currentAmmo: 0
