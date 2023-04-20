@@ -46,9 +46,9 @@ public class ToggleableEquipment : Equipment
 
     private void UpdateAnimator() {
         if(toggled) {
-            animator.Play("On");
+            animator.SetTrigger("On");
         } else {
-            animator.Play("Off");
+            animator.SetTrigger("Off");
         }
     }
 }
