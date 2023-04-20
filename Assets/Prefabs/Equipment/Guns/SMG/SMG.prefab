@@ -301,6 +301,7 @@ GameObject:
   - component: {fileID: 327075976919855257}
   - component: {fileID: 1344679400560522963}
   - component: {fileID: 8190108783919686116}
+  - component: {fileID: 3414818133914961002}
   m_Layer: 0
   m_Name: SMG
   m_TagString: Untagged
@@ -335,7 +336,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: -0.05, y: 0.14, z: 0.45}
+  m_Size: {x: 0.05, y: 0.14, z: 0.45}
   m_Center: {x: 0, y: -0.03, z: -0.05}
 --- !u!54 &1344679400560522963
 Rigidbody:
@@ -468,3 +469,53 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!114 &3414818133914961002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7484088227577278433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e04dd48dcfba43341ae7d9f5b66b1fca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseMesh: {fileID: 2390461527704060275}
+  hoverMaterial: {fileID: 2100000, guid: 33d1b831ca2d0a147aa881247469a617, type: 2}
+  trigger:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Trigger
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: d1ca427e-5b8e-4da6-94ab-1c8bb44b7006
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -6352559036096749245, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  primary:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Primary
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 0786b3f7-f27a-4286-af4a-ce74d77d131e
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  secondary:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Secondary
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: c3b991f8-8c14-42ea-8017-89805c65fd80
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
