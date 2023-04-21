@@ -30,12 +30,14 @@ public class Gun : Equipment
     private ObjectPool bulletPool;
     private ObjectPool shootEffectPool;
     private ObjectPool casingPool;
+    private AudioEffect emptyClipAudio;
     private bool automatic = false;
     private float lastShotTime = -1000f;
     private float shotCooldown = 0.0f;
     
     new public void Start() {
         base.Start();
+        emptyClipAudio = gameObject.GetComponent<AudioEffect>();
         bulletPool = gameObject.AddComponent<ObjectPool>();
         bulletPool.prefab = bullet;
         bulletPool.initialPoolSize = Mathf.CeilToInt(1.0f/(bps*bulletCount));
@@ -74,6 +76,9 @@ public class Gun : Equipment
                 gunAnimator?.SetTrigger("Single");
             }
         }
+
+        //Play empty clip sound
+        if(grabController.TriggerJustPressed() && !HasAmmo()) emptyClipAudio?.Play();
 
         //Check for trigger
         if(automatic) {

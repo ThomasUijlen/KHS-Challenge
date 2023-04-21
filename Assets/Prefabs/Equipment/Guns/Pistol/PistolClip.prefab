@@ -293,3 +293,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseMesh: {fileID: 4045907190079660378}
   hoverMaterial: {fileID: 2100000, guid: 33d1b831ca2d0a147aa881247469a617, type: 2}
+  validSlots:
+  - HipSmall

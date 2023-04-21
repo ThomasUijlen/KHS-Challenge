@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.InputSystem;
@@ -10,12 +11,16 @@ public class Equipment : MonoBehaviour
     [Header("Hovering Logic")]
     public GameObject baseMesh;
     public Material hoverMaterial;
+    [Header("Equipment Slots")]
+    public string[] validSlots;
 
     private XRGrabInteractable interactable;
     private MeshFilter meshFilter;
     private MeshRenderer meshRenderer;
 
     protected XRInput grabController;
+    private EquipmentSlot currentSlot;
+    private EquipmentSlot hoverSlot;
     private bool hovered = false;
 
     public void Start()
@@ -68,15 +73,41 @@ public class Equipment : MonoBehaviour
     public virtual void Selected(SelectEnterEventArgs args) {
         grabController = args.interactorObject.transform.gameObject.GetComponent<XRInput>();
         UpdateHoverMesh();
+        
+        if(currentSlot != null) {
+            currentSlot.Release(this);
+            currentSlot = null;
+        }
     }
 
     public virtual void Deselected(SelectExitEventArgs args) {
         grabController = null;
         UpdateHoverMesh();
+        
+        if(hoverSlot && !hoverSlot.isFull()) {
+            currentSlot = hoverSlot;
+            currentSlot.Hold(this);
+        }
     }
 
     private void UpdateHoverMesh() {
         if(baseMesh == null) return;
         meshRenderer.enabled = hovered && grabController == null;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        EquipmentSlot slot = other.GetComponent<EquipmentSlot>();
+        if(slot == null) return;
+        if(hoverSlot != null) return;
+        if(!Array.Exists(validSlots, slotName => slotName == slot.slotName)) return;
+        hoverSlot = slot;
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        EquipmentSlot slot = other.GetComponent<EquipmentSlot>();
+        if(slot == null) return;
+        if(slot == hoverSlot) hoverSlot = null;
     }
 }
