@@ -14,7 +14,7 @@ public class Equipment : MonoBehaviour
     [Header("Equipment Slots")]
     public string[] validSlots;
 
-    private XRGrabInteractable interactable;
+    protected XRGrabInteractable interactable;
     private MeshFilter meshFilter;
     private MeshRenderer meshRenderer;
 
