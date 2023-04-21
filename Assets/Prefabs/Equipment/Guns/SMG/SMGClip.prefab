@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 8190108783919686116}
   - component: {fileID: 946077562003577775}
   - component: {fileID: 757420336117906484}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SMGClip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
